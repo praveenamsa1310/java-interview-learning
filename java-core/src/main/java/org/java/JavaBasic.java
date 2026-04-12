@@ -90,6 +90,23 @@ public class JavaBasic {
             default:
                 System.out.println("default value");
         }
+
+        System.out.println("While Loop");
+        while (a >= bbb) {
+            System.out.println("While Loop : " + bbb);
+            bbb += 100;
+        }
+        int dice = 1;
+
+        while (dice <= 6) {
+            if (dice < 6) {
+                System.out.println("No Yatzy.");
+            } else {
+                System.out.println("Yatzy!");
+            }
+            dice = dice + 1;
+        }
+
     }
 
 }
