@@ -12,7 +12,7 @@ public class JavaBasic {
         // -------- Primitive Data Types --------
         byte b = 100;              // 1 byte
         short s = 30000;           // 2 bytes
-        int i = 100000;            // 4 bytes
+        int ii = 100000;            // 4 bytes
         long l = 10000000000L;     // 8 bytes
 
         float f = 3.14f;           // 4 bytes
@@ -30,7 +30,7 @@ public class JavaBasic {
         // -------- Output --------
         System.out.println("byte: " + b);
         System.out.println("short: " + s);
-        System.out.println("int: " + i);
+        System.out.println("int: " + ii);
         System.out.println("long: " + l);
         System.out.println("float: " + f);
         System.out.println("double: " + d);
@@ -106,6 +106,31 @@ public class JavaBasic {
             }
             dice = dice + 1;
         }
+
+        for (int i = 0; i <= 5; i++) {
+            System.out.println("Outer Loop: " + i );
+            for (int j = 0; j <= i; j++) {
+                System.out.println("Inner Loop: " + j );
+            }
+        }
+
+        int twoMultiply = 2;
+        for (int nm = 1; nm <= 10; nm ++) {
+            if (nm == 4) {
+                System.out.println("44444444444");
+                continue;
+            }
+            System.out.println(twoMultiply + " X " + nm + " = " + (twoMultiply * nm));
+            if (nm == 5)
+                break;
+        }
+
+        String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+        for (String car : cars) {
+            System.out.println(car);
+        }
+
+
 
     }
 
