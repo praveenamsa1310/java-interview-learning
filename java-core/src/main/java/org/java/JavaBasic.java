@@ -129,8 +129,20 @@ public class JavaBasic {
         for (String car : cars) {
             System.out.println(car);
         }
-
-
+        System.out.println("*******************************");
+        for (int cc = 0; cc < cars.length; cc++) {
+            if(cars[cc] == "BMW")
+                cars[cc] = "Volvo";
+            System.out.println(cars[cc]);
+        }
+        System.out.println("*********Multi Array***********");
+        int[][] multiArray = {{1, 2, 3}, {4, 5, 6}};
+        for (int x  = 0; x < multiArray.length; x++) {
+            for (int y = 0; y <multiArray[x].length; y++) {
+                System.out.print(multiArray[x][y] + " ");
+            }
+            System.out.println();
+        }
 
     }
 
