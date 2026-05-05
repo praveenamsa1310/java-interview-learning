@@ -23,6 +23,7 @@ public class SecondClass extends AbstractClass {
         System.out.println("Copy Constructor from SecondClass ");
     }
 
+    @Deprecated
     public int  printXvalue() {
         System.out.println("Second Class : printXvalue: " + x);
         return x;

@@ -21,6 +21,15 @@ public class JavaBasic {
         char c = 'A';              // 2 bytes (Unicode character)
         boolean flag = true;       // 1 bit
 
+        // Wrapper Class
+        System.out.println(" ------------- Wrapper Class ------------");
+        Integer myInt = 5;
+        Double myDouble = 5.99;
+        Character myChar = 'A';
+        System.out.println(myInt.intValue());
+        System.out.println(myDouble.doubleValue());
+        System.out.println(myChar.charValue());
+
         // -------- Non-Primitive Data Types --------
         String str = "Hello, Java"; // String (class in Java)
         int[] arr = {1, 2, 3, 4, 5}; // Array
