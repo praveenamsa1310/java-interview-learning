@@ -8,6 +8,31 @@ public class JavaBasic {
          * Multiline comment
          */
 
+        //second largest number
+        int[] arr = {10, 20, 5, 40, 30};
+
+        int max = Integer.MIN_VALUE;
+        int secLar = max;
+        for (int a: arr) {
+            if (a > max) {
+                secLar = max;
+                max = a;
+            }
+            else if (a > secLar) {
+                secLar = a;
+            }
+        }
+
+        System.out.println("Max Largest: "+ max);
+        System.out.println("Second Largest: "+ secLar);
+
+        Integer intValue = 128;
+        Integer integerValue = 128;
+
+        if (integerValue == intValue) {
+            System.out.println("Both int and Integer values are true");
+        }
+
         System.out.println("Primitive Data Types");
         // -------- Primitive Data Types --------
         byte b = 100;              // 1 byte
@@ -32,7 +57,7 @@ public class JavaBasic {
 
         // -------- Non-Primitive Data Types --------
         String str = "Hello, Java"; // String (class in Java)
-        int[] arr = {1, 2, 3, 4, 5}; // Array
+        int[] arr1 = {1, 2, 3, 4, 5}; // Array
         Integer wrapperInt = Integer.valueOf(50); // Wrapper class example
         StringBuilder sb = new StringBuilder("Java"); // Class object
 

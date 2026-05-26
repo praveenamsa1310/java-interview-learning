@@ -169,6 +169,37 @@ public class StreamsMainClass {
                 longs.stream()
                         .collect(Collectors.averagingLong(x -> x))
         );
+
+        // Implement the following
+        // 1. Print the names of employees whose salary is above certain threshold(5000)
+        System.out.println("1. Print the names of employees whose salary is above certain threshold(5000)");
+        getEmployeeList().stream()
+                .filter(e -> e.getSalary() > 5000)
+                .map(Employee::getName)
+                .forEach(System.out::println);
+
+        // 2. Create a new list containing, employees with salary increase of 10%
+        System.out.println("2. Create a new list containing, employees with salary increase of 10%");
+        List<Employee> empSalaryHike = getEmployeeList().stream()
+                .map(e -> new Employee(e.getId(), e.getName(), e.getSalary() + e.getSalary() * 0.10))
+                .toList();
+        System.out.println(empSalaryHike);
+
+
+        Employee maxSalary = getEmployeeList().stream()
+                .max(Comparator.comparing(Employee::getSalary))
+                .orElse(null);
+        // 3. Employee Having max salary
+        System.out.println(maxSalary);
+
+        Map<String, Double> groupedSalary = getEmployeeList().stream()
+                .collect(Collectors.groupingBy(Employee::getName, Collectors.summingDouble(Employee::getSalary)));
+
+        Map<String, Double> groupedSalary2 = getEmployeeList().stream()
+                .collect(Collectors.toMap(Employee::getName, Employee::getSalary, Double::sum));
+        for(Map.Entry<String, Double> entry: groupedSalary.entrySet()) {
+            System.out.println(entry.getKey() + " : " + entry.getValue());
+        }
     }
 
     private static List<Person> getPeople(){
@@ -179,5 +210,13 @@ public class StreamsMainClass {
                 new Person("Durga", 21, Gender.FEMALE),
                 new Person("Dhanraj", 21, Gender.MALE)
         );
+    }
+
+    public static List<Employee> getEmployeeList () {
+
+        return List.of(new Employee(1, "praveen", 5000),
+                new Employee(2, "durga", 8000),
+                new Employee(3, "theja", 6000),
+                new Employee(4, "prasanth", 4000));
     }
 }
