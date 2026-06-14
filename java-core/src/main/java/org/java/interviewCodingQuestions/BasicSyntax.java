@@ -56,7 +56,7 @@ public class BasicSyntax {
             reversedStr = myTxt.charAt(i) + reversedStr;
         }
         System.out.println();
-        System.out.println(reversedStr);
+        System.out.println("Reversed" + reversedStr);
 
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(myCharArr);
@@ -152,7 +152,6 @@ public class BasicSyntax {
         System.out.println("Output: " + Arrays.toString(array));
 
 // ********************* palindrome **********************
-
         String palTxt = "racecar";
         int left = 0;
         int right = palTxt.length() - 1;

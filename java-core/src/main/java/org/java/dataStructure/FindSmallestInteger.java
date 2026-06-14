@@ -26,36 +26,26 @@ public class FindSmallestInteger {
     }
 
     public static int getSmallestIntegerAnotherApproach(int[] input) {
-
         Set<Integer> input1 = new HashSet<>();
-
         for (int n: input) {
             if (n > 0)
                 input1.add(n);
         }
-
         int smallestInteger = 1;
-
         while (input1.contains(smallestInteger)) {
             smallestInteger++;
         }
-
-
         return smallestInteger;
     }
-
+    // Find Smallest Integer
     public static int getSmallestInteger(int[] input) {
         Arrays.sort(input);
-
         int smallestInteger = 1;
-
         for (int num: input) {
             if (num == smallestInteger) {
                 smallestInteger++;
             }
         }
-
-
         return smallestInteger;
     }
 }

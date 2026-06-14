@@ -23,7 +23,7 @@ public class BubbleSort {
         { System.out.print(x+ " ");}
         System.out.print("\n After sorting\n ");
         int temp = arr[0];
-           for(int i = 0; i<n; i++)
+        for(int i = 0; i<n; i++)
         {
             for(int j = 0; j<(n-i-1); j++)
             {

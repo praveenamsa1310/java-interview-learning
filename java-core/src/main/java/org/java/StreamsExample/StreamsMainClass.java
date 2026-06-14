@@ -2,6 +2,7 @@ package org.java.StreamsExample;
 
 import java.lang.reflect.Array;
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 //import java.util.stream.Collectors;
 import static java.util.Comparator.comparing;
@@ -164,6 +165,22 @@ public class StreamsMainClass {
                         .collect(Collectors.joining(","))
         );
 
+
+        Map<Integer, Long> countDuplicate = Arrays.asList(integers, integers4)
+                .stream()
+                .flatMap(Collection::stream)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+
+        System.out.println("Count Duplicate Numberes" + countDuplicate);
+
+        String value = "tomorrownerverdies";
+
+        Map<Character, Long> duplicateCharCount = value.chars()
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        System.out.println("Duplicate Character" + duplicateCharCount);
+
         List<Long> longs = Arrays.asList(10l,10l,10l);
         System.out.println(
                 longs.stream()
@@ -185,7 +202,6 @@ public class StreamsMainClass {
                 .toList();
         System.out.println(empSalaryHike);
 
-
         Employee maxSalary = getEmployeeList().stream()
                 .max(Comparator.comparing(Employee::getSalary))
                 .orElse(null);
@@ -200,6 +216,19 @@ public class StreamsMainClass {
         for(Map.Entry<String, Double> entry: groupedSalary.entrySet()) {
             System.out.println(entry.getKey() + " : " + entry.getValue());
         }
+
+//        Map<String, Double> avgPriceBrand = products.stream()
+//                .filter(product::isDiscountEligible)
+//                .collect(Collectors.groupingBy
+//                        ( product::getBrand,
+//                          Collectors.avragingDoible(product::gwtPrice)
+//                        ));
+//        double avgPrice = product.stream()
+//                .filter(Product::isDiscountEligible)
+//                .mapToDouble(Product::getPrice
+//                )
+//                .average()
+//                .orElse(0,0);
     }
 
     private static List<Person> getPeople(){

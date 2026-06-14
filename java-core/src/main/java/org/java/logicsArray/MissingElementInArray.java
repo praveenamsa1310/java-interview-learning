@@ -19,7 +19,7 @@ public class MissingElementInArray {
     for(int i =0; i<n; i++)
     {
         sum += arr[i];
-    }
+    };
     System.out.println(total-sum);
     }   
 }

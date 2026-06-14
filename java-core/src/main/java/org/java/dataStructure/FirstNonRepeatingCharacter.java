@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class FirstNonRepeatingCharacter {
-
+    // First Non Repeating Character
     public static void main(String[] args) {
         System.out.println(findNonRepeating("aaccdbb"));
         String s = "aaccdbb";
@@ -18,6 +18,7 @@ public class FirstNonRepeatingCharacter {
            }
         }
 
+        // Count coccurance of chanraters repeated
         String ss = "AABAAACCAADCC";
 
         Map<String, Integer> result = new HashMap<>();
